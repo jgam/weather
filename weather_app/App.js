@@ -50,11 +50,11 @@ export default class App extends React.Component {
       });
   }
   render() {
-    const { isLoaded, error, temperature } = this.state;
+    const { isLoaded, error, temperature, name } = this.state;
     return (//view component will be returned to necessary component.
       <View style={styles.container}>
       <StatusBar barStyle = "dark-content" />
-        {isLoaded ? (<Weather temp={Math.floor(temperature - 273.15)}/>) : (
+        {isLoaded ? (<Weather weatherName = {name} temp={Math.floor(temperature - 273.15)}/>) : (
         <View style={styles.loading}>
           <ActivityIndicator />
           <Text style={styles.loadingText}>Getting the weather . . !</Text>
